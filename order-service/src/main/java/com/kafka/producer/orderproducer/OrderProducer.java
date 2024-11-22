@@ -30,7 +30,7 @@ public class OrderProducer {
                 .setHeader(KafkaHeaders.TOPIC, topic.name())
                 .build();
 
-        LOGGER.info(String.format("Published order event::::::::::::: %s", event));
+        LOGGER.info(String.format("Published order event:::::::::::::::::::::::::: %s", event));
 
         kafkaTemplate.send(message);
     }
