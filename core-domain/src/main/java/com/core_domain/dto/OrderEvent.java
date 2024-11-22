@@ -7,6 +7,8 @@ public class OrderEvent {
     private String status;
     private Order order;
 
+    public OrderEvent() {}
+
     public OrderEvent(String id, String message, String status, Order order) {
         this.id = id;
         this.message = message;
@@ -44,5 +46,15 @@ public class OrderEvent {
 
     public void setOrder(Order order) {
         this.order = order;
+    }
+
+    @Override
+    public String toString() {
+        return "OrderEvent{" +
+                "id='" + id + '\'' +
+                ", message='" + message + '\'' +
+                ", status='" + status + '\'' +
+                ", order=" + order +
+                '}';
     }
 }

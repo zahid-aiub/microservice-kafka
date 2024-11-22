@@ -3,13 +3,15 @@ package com.core_domain.dto;
 public class Order {
 
     private String id;
-    private String orderStatus;
+    private String name;
     private int quantity;
     private double price;
 
-    public Order(String id, String orderStatus, int quantity, double price) {
+    public Order() {}
+
+    public Order(String id, String name, int quantity, double price) {
         this.id = id;
-        this.orderStatus = orderStatus;
+        this.name = name;
         this.quantity = quantity;
         this.price = price;
     }
@@ -22,12 +24,12 @@ public class Order {
         this.id = id;
     }
 
-    public String getOrderStatus() {
-        return orderStatus;
+    public String getName() {
+        return name;
     }
 
-    public void setOrderStatus(String orderStatus) {
-        this.orderStatus = orderStatus;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getQuantity() {
@@ -44,5 +46,15 @@ public class Order {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", quantity=" + quantity +
+                ", price=" + price +
+                '}';
     }
 }
