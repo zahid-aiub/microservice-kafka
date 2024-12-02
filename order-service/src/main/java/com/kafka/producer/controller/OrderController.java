@@ -42,14 +42,23 @@ public class OrderController {
         return "Order placed successfully!";
     }
 
-    @GetMapping("/{id}")
-    public Order getOrder(@PathVariable() String id) {
+    @GetMapping("/all")
+    Iterable<Order> getOrders() {
+        return this.orderService.getOrders();
+    }
 
+    @GetMapping("/{id}")
+    public Order getOrder(@PathVariable() Long id) {
         return this.orderService.findById(id);
     }
 
+    @PutMapping("/{id}")
+    public Order updateOrder(@PathVariable() Long id, @RequestBody Order order) {
+        return this.orderService.updateOrder(id, order);
+    }
+
     @DeleteMapping("/{id}")
-    public String deleteOrder(@PathVariable() String id) {
+    public String deleteOrder(@PathVariable() Long id) {
 
         return this.orderService.deleteOrder(id);
     }

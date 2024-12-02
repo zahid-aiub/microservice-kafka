@@ -5,8 +5,13 @@ import com.kafka.producer.entity.Order;
 public interface OrderService {
 
     Order createOrder(Order order);
-    Order findById(String id);
 
-    String deleteOrder(String id);
+    Iterable<Order> getOrders();
+
+    Order findById(Long id);
+
+    Order updateOrder(Long id, Order order);
+
+    String deleteOrder(Long id);
 
 }
